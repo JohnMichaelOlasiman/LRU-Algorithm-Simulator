@@ -900,6 +900,147 @@
     overflow: hidden;
   }
   
+  /* FAQ Section */
+  .faq-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 1.5rem;
+  }
+  
+  .faq-question {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  
+  .faq-item.active .faq-answer {
+    max-height: 1000px;
+  }
+
+.faq-answer p {
+  margin-bottom: 1rem;
+}
+
+.faq-answer ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-answer ul li {
+.faq-answer p {
+  margin-bottom: 1rem;
+}
+
+.faq-answer ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-answer ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.faq-answer ul ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer ul li::before {
+  content: '•';
+  position: absolute;
+  left: -1.2rem;
+  color: var(--primary-color);
+}
+
+.faq-answer ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  counter-reset: item;
+}
+
+.faq-answer ol li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  counter-increment: item;
+}
+
+.faq-answer ol li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: -1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.faq-answer ul ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer ul li::before {
+  content: '•';
+  position: absolute;
+  left: -1.2rem;
+  color: var(--primary-color);
+}
+
+.faq-answer ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  counter-reset: item;
+}
+
+.faq-answer ol li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  counter-increment: item;
+}
+
+.faq-answer ol li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: -1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
   /* Parallax Section */
   .parallax-section {
     position: relative;
@@ -970,14 +1111,52 @@
   }
   
   .footer-names {
-    margin-top: 1rem;
-    text-align: center;
-    line-height: 1.8;
-  }
-  
-  .footer-names p {
-    margin: 0;
-  }
+      margin-top: 1rem;
+      text-align: center;
+      line-height: 1.8;
+    }
+    
+    .footer-names p {
+      margin: 0;
+    }
+
+    .name-with-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .verified-badge {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-color: #1a73e8; /* Google blue color */
+      border-radius: 50%;
+      position: relative;
+      transform: scale(1);
+      margin-left: 4px;
+      /* Create the wavy/jagged edge effect */
+      clip-path: polygon(
+        50% 0%, 61% 10%, 74% 6%, 80% 20%, 93% 22%, 90% 37%, 
+        100% 47%, 91% 60%, 95% 75%, 80% 80%, 74% 94%, 60% 90%, 
+        50% 100%, 40% 90%, 26% 94%, 20% 80%, 5% 75%, 9% 60%, 
+        0% 47%, 10% 37%, 7% 22%, 20% 20%, 26% 6%, 39% 10%
+      );
+    }
+
+    .verified-badge::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 3px;
+      border: 2px solid white;
+      border-top: none;
+      border-right: none;
+      transform: translate(-50%, -60%) rotate(-45deg);
+    }
   
   /* Responsive Design */
   @media (max-width: 992px) {
@@ -1087,6 +1266,7 @@
         <li><a href="index.html">Simulator</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#examples">Examples</a></li>
+        <li><a href="#faq">FAQs</a></li>
       </ul>
     </nav>
   </header>
@@ -1171,21 +1351,12 @@
           
           <p class="reveal-text">When a page fault occurs and all memory frames are occupied, LRU makes an intelligent decision by evicting the page that has gone the longest time without being referenced. This approach minimizes the number of page faults compared to simpler algorithms like FIFO (First-In-First-Out).</p>
           
-          <h3 class="reveal-text">Technical Implementation:</h3>
-          <p class="reveal-text">LRU can be implemented using various data structures:</p>
+          <h3 class="reveal-text">Real World Analogies:</h3>
           <ul>
-            <li class="reveal-text"><strong>Counter-based:</strong> Each page entry is tagged with the time of last use. When replacement is needed, the page with the oldest timestamp is selected.</li>
-            <li class="reveal-text"><strong>Stack-based:</strong> Pages are organized in a stack, with the most recently used page at the top. Each time a page is accessed, it's moved to the top.</li>
-            <li class="reveal-text"><strong>Hash Map + Doubly Linked List:</strong> Provides O(1) lookup time with efficient updates to the recency order.</li>
-          </ul>
-          
-          <h3 class="reveal-text">Real-world Applications:</h3>
-          <p class="reveal-text">LRU is widely used in:</p>
-          <ul>
-            <li class="reveal-text"><strong>Virtual Memory Systems:</strong> Modern operating systems use variants of LRU for page replacement.</li>
-            <li class="reveal-text"><strong>Database Buffer Management:</strong> Database systems employ LRU to decide which data blocks to keep in memory.</li>
-            <li class="reveal-text"><strong>Web Caching:</strong> Content Delivery Networks (CDNs) and browsers use LRU to manage cached web resources.</li>
-            <li class="reveal-text"><strong>CPU Caches:</strong> Some processor cache replacement policies are based on LRU principles.</li>
+            <li class="reveal-text"><strong>Library Bookshelf:</strong> Imagine a small bookshelf that can only hold 5 books. When you need to add a new book but the shelf is full, you remove the book you haven't read for the longest time.</li>
+            <li class="reveal-text"><strong>Refrigerator Organization:</strong> When your refrigerator is full and you need to add new groceries, you typically discard the items you haven't used in the longest time.</li>
+            <li class="reveal-text"><strong>Closet Management:</strong> When organizing a limited closet space, you might move rarely worn clothes to storage, keeping frequently worn items easily accessible.</li>
+            <li class="reveal-text"><strong>To-Do List Prioritization:</strong> When managing a limited set of tasks, you focus on recently relevant items and deprioritize those that haven't been important for a while.</li>
           </ul>
         </div>
       </div>
@@ -1213,6 +1384,108 @@
       </div>
     </section>
 
+    <section id="faq" class="faq-section">
+      <h2 class="section-title reveal-text">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">What is the main advantage of LRU over other page replacement algorithms?</div>
+          <div class="faq-answer">
+            <p>The main advantage of LRU is that it leverages temporal locality, which is a fundamental property of most computer programs. By replacing pages that haven't been used for the longest time, LRU typically achieves a lower page fault rate compared to simpler algorithms like FIFO. It adapts well to changing access patterns and performs consistently across various workloads.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How does LRU work?</div>
+          <div class="faq-answer">
+            <p>LRU works by maintaining a record of when each page in memory was last accessed. When a page is requested:</p>
+            <ul>
+              <li>If the page is already in memory (a cache hit), it's marked as the most recently used page</li>
+              <li>If the page is not in memory (a cache miss) and there's free space, the new page is added and marked as most recently used</li>
+              <li>If the page is not in memory and there's no free space, the algorithm identifies the page that hasn't been accessed for the longest time and replaces it with the new page</li>
+            </ul>
+            <p>This approach ensures that pages that are frequently accessed remain in memory, while those that haven't been used for a long time are candidates for replacement.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What are the disadvantages of LRU?</div>
+          <div class="faq-answer">
+            <p>Despite its effectiveness, LRU has several disadvantages:</p>
+            <ul>
+              <li>High implementation overhead: Tracking the exact usage order of all pages requires additional data structures and processing</li>
+              <li>Scanning anomaly: Sequential access to many pages can flush the cache of useful pages that might be needed again soon</li>
+              <li>No consideration of frequency: LRU only considers recency, not how often a page is accessed</li>
+              <li>Hardware implementation challenges: True LRU is difficult to implement in hardware, leading to approximations</li>
+              <li>Performance issues with certain access patterns: LRU may perform poorly with cyclic access patterns that are larger than the cache size</li>
+            </ul>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What are some alternatives to LRU?</div>
+          <div class="faq-answer">
+            <p>Several alternatives to LRU exist, each with their own advantages:</p>
+            <ul>
+              <li><strong>FIFO (First-In-First-Out):</strong> Simpler to implement but often less effective than LRU</li>
+              <li><strong>LFU (Least Frequently Used):</strong> Replaces the page with the lowest access count</li>
+              <li><strong>Clock Algorithm:</strong> An approximation of LRU that uses a circular buffer and reference bits</li>
+              <li><strong>LIRS (Low Inter-reference Recency Set):</strong> Considers both recency and reuse distance</li>
+              <li><strong>ARC (Adaptive Replacement Cache):</strong> Balances between recency and frequency</li>
+              <li><strong>Belady's OPT (Optimal Page Replacement):</strong> Theoretical algorithm that replaces the page that won't be used for the longest time in the future</li>
+              <li><strong>Random Replacement:</strong> Randomly selects a page to replace, requiring minimal overhead</li>
+            </ul>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">When do we use LRU?</div>
+          <div class="faq-answer">
+            <p>LRU is commonly used in scenarios where:</p>
+            <ul>
+              <li>Memory or cache space is limited and must be managed efficiently</li>
+              <li>Access patterns exhibit strong temporal locality</li>
+              <li>The overhead of tracking recency is acceptable</li>
+              <li>Specific applications include:
+                <ul>
+                  <li>Web browsers for caching recently visited pages</li>
+                  <li>Database management systems for buffer pool management</li>
+                  <li>Operating systems for page replacement in virtual memory</li>
+                  <li>Content Delivery Networks (CDNs) for caching popular content</li>
+                  <li>Mobile applications with memory constraints</li>
+                  <li>In-memory caches like Redis or Memcached</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the purpose of LRU?</div>
+          <div class="faq-answer">
+            <p>The primary purpose of LRU is to optimize memory usage by keeping the most relevant data readily accessible while discarding less relevant data. Specifically, LRU aims to:</p>
+            <ul>
+              <li>Maximize cache hit rates by retaining recently accessed items</li>
+              <li>Minimize page faults in virtual memory systems</li>
+              <li>Improve overall system performance by reducing access times to frequently used data</li>
+              <li>Balance memory constraints with performance requirements</li>
+              <li>Exploit temporal locality patterns in program behavior</li>
+              <li>Provide a reasonable compromise between implementation complexity and effectiveness</li>
+            </ul>
+            <p>By achieving these goals, LRU helps bridge the performance gap between fast but limited memory and slower but larger storage systems.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is LRU always the best choice?</div>
+          <div class="faq-answer">
+            <p>No, LRU is not always the best choice for all scenarios. Its effectiveness depends on several factors:</p>
+            <ul>
+              <li>Access patterns: LRU works well with temporal locality but may perform poorly with cyclic or sequential access patterns</li>
+              <li>Resource constraints: The overhead of implementing true LRU might be prohibitive in some systems</li>
+              <li>Specific workloads: Some applications benefit more from frequency-based approaches (like LFU) or hybrid approaches</li>
+              <li>Cache size: With very small caches, the benefits of LRU may be limited</li>
+              <li>Real-time requirements: LRU's variable execution time might not be suitable for hard real-time systems</li>
+            </ul>
+            <p>In practice, many systems use approximations of LRU or adaptive algorithms that can switch between different replacement policies based on observed access patterns.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cta parallax-section">
       <div class="parallax-bg"></div>
       <div class="cta-content">
@@ -1231,9 +1504,13 @@
         <a href="index.html">Simulator</a>
         <a href="#about">About</a>
         <a href="#examples">Examples</a>
+        <a href="#faq">FAQs</a>
       </div>
       <div class="footer-names">
-        <p>OLASIMAN, John Michael</p>
+        <p class="name-with-badge">
+          OLASIMAN, John Michael
+          <span class="verified-badge"></span>
+        </p>
         <p>PACQUIAO, Ejhie</p>
         <p>BINGHAY, Carl David</p>
       </div>
@@ -1311,7 +1588,7 @@
     });
   });
   
-  // LRU Timeline Visualization
+  // LRU Timeline Visualization - Modified for looping animation
   const timelineContent = document.getElementById('timelineContent');
   const referenceSequence = document.getElementById('referenceSequence');
   
@@ -1386,7 +1663,7 @@
     });
   }
   
-  // Render timeline visualization
+  // Render timeline visualization with looping animation
   function renderTimeline() {
     processAllSteps();
     
@@ -1426,29 +1703,80 @@
           }
         }
         
-        // Add animation delay based on step index
-        cell.style.transitionDelay = `${stepIndex * 0.1}s`;
-        
         // Add to the appropriate row
         rows[frameIndex].appendChild(cell);
       }
-      
-      // Highlight current reference in sequence
-      if (stepIndex > 0) {
-        const referenceCells = referenceSequence.querySelectorAll('.reference-cell');
-        if (step.step !== undefined) {
-          referenceCells[step.step].classList.add('active');
-        }
-      }
     });
     
-    // Animate cells after a short delay
+    // Animate cells initially
     setTimeout(() => {
       const cells = document.querySelectorAll('.timeline-cell');
       cells.forEach(cell => {
         cell.classList.add('visible');
       });
     }, 500);
+    
+    // Set up looping animation
+    startLoopingAnimation();
+  }
+  
+  // Function to create looping animation for timeline
+  function startLoopingAnimation() {
+    const referenceCells = referenceSequence.querySelectorAll('.reference-cell');
+    const timelineCells = document.querySelectorAll('.timeline-cell');
+    const rows = timelineContent.querySelectorAll('.timeline-row');
+    let currentStep = 0;
+    const totalSteps = pages.length;
+    
+    // Reset all cells
+    function resetAllCells() {
+      referenceCells.forEach(cell => cell.classList.remove('active'));
+      timelineCells.forEach(cell => {
+        cell.classList.remove('hit', 'new', 'replace');
+      });
+    }
+    
+    // Animate one step
+    function animateStep() {
+      resetAllCells();
+      
+      // Highlight current reference
+      if (currentStep < totalSteps) {
+        referenceCells[currentStep].classList.add('active');
+      }
+      
+      // Highlight corresponding cells in timeline
+      for (let i = 0; i < 3; i++) {
+        const cellIndex = currentStep + 1; // +1 because first column is initial state
+        if (cellIndex < timelineCells.length / 3) {
+          const cell = rows[i].children[cellIndex];
+          
+          // Check if this is the cell that changed in this step
+          if (cell && timelineSteps[cellIndex] && 
+              cell.textContent === timelineSteps[cellIndex].referencedPage) {
+            
+            if (timelineSteps[cellIndex].isPageFault) {
+              if (timelineSteps[cellIndex].replacedPage !== null) {
+                cell.classList.add('replace');
+              } else {
+                cell.classList.add('new');
+              }
+            } else {
+              cell.classList.add('hit');
+            }
+          }
+        }
+      }
+      
+      // Move to next step
+      currentStep = (currentStep + 1) % totalSteps;
+      
+      // Continue animation loop
+      setTimeout(animateStep, 1000);
+    }
+    
+    // Start the animation
+    animateStep();
   }
   
   // LRU Diagram Animation
@@ -1751,6 +2079,25 @@
   renderTimeline();
   createLRUDiagram();
   createExamples();
+  
+  // FAQ interaction
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      // Toggle active class
+      item.classList.toggle('active');
+      
+      // Close other FAQ items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+        }
+      });
+    });
+  });
 });
   </script>
 </body>

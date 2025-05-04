@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LRU Algorithm Flowcharts</title>
+  <link rel="stylesheet" href="output.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .flowchart-container {
+      max-width: 100%;
+      overflow-x: auto;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .flowchart-img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .tab-btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem 0.5rem 0 0;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .tab-btn.active {
+      background-color: white;
+      color: #4f46e5;
+      border-bottom: 3px solid #4f46e5;
+    }
+    
+    .tab-btn:not(.active) {
+      background-color: #f3f4f6;
+      color: #6b7280;
+    }
+    
+    .tab-btn:hover:not(.active) {
+      background-color: #e5e7eb;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 py-8">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <!-- Header Section with integrated buttons -->
+    <div class="flex items-center mb-6">
+      <!-- Left: Title -->
+      <div class="flex-1">
+        <h1 class="text-3xl font-bold text-gray-800">LRU Algorithm Flowcharts</h1>
+      </div>
+      
+      <!-- Center: Home button -->
+      <div class="flex-1 flex justify-center">
+        <a href="homepage.html" class="control-btn">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </div>
+      
+      <!-- Right: Back to Simulator button -->
+      <div class="flex-1 flex justify-end">
+        <button onclick="window.location.href='index.html'" class="control-btn">
+          <i class="fas fa-arrow-left"></i> Back to Simulator
+        </button>
+      </div>
+    </div>
+    
+    <!-- Tabs Navigation -->
+    <div class="flex mb-4 overflow-x-auto">
+      <button class="tab-btn active" onclick="openTab(event, 'initialize')">Initialize()</button>
+      <button class="tab-btn" onclick="openTab(event, 'validateInput')">ValidateInput()</button>
+      <button class="tab-btn" onclick="openTab(event, 'processNextStep')">ProcessNextStep()</button>
+      <button class="tab-btn" onclick="openTab(event, 'renderPageSequence')">RenderPageSequence()</button>
+      <button class="tab-btn" onclick="openTab(event, 'renderFrames')">RenderFrames()</button>
+    </div>
+    
+    <!-- Flowchart Content -->
+    <div id="initialize" class="tab-content active">
+      <div class="bg-white p-4 rounded-md mb-4">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Initialize Function</h2>
+        <p class="text-gray-600 mb-4">This flowchart illustrates the initialization process of the LRU algorithm, setting up the initial state variables and preparing the visualization.</p>
+      </div>
+      <div class="flowchart-container">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2%20-%20initialize%28%29-2j4vzWTm8LD0HZ78dm4rMutEDWvXHN.png" alt="Initialize Function Flowchart" class="flowchart-img">
+      </div>
+    </div>
+    
+    <div id="validateInput" class="tab-content">
+      <div class="bg-white p-4 rounded-md mb-4">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">ValidateInput Function</h2>
+        <p class="text-gray-600 mb-4">This flowchart shows how the input validation works, ensuring only valid page references (A-F) are accepted.</p>
+      </div>
+      <div class="flowchart-container">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20-%20validateInput-mlATeONaEqTw1lQIj6KkJP5xa9OyZ7.png" alt="ValidateInput Function Flowchart" class="flowchart-img">
+      </div>
+    </div>
+    
+    <div id="processNextStep" class="tab-content">
+      <div class="bg-white p-4 rounded-md mb-4">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">ProcessNextStep Function</h2>
+        <p class="text-gray-600 mb-4">This flowchart demonstrates how the algorithm processes each step, handling page hits, page faults, and replacements according to the LRU policy.</p>
+      </div>
+      <div class="flowchart-container">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3%20-%20processNextStep-0FPmsoLyBYQ5NpIif8mSK8Vkc2Xtcp.png" alt="ProcessNextStep Function Flowchart" class="flowchart-img">
+      </div>
+    </div>
+    
+    <div id="renderPageSequence" class="tab-content">
+      <div class="bg-white p-4 rounded-md mb-4">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">RenderPageSequence Function</h2>
+        <p class="text-gray-600 mb-4">This flowchart shows how the page reference sequence is rendered in the UI, highlighting the current page being processed.</p>
+      </div>
+      <div class="flowchart-container">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4%20-%20renderPageSequence.jpg-qAkFi2fwWhqFw036ig4veUUKYebLH3.jpeg" alt="RenderPageSequence Function Flowchart" class="flowchart-img">
+      </div>
+    </div>
+    
+    <div id="renderFrames" class="tab-content">
+      <div class="bg-white p-4 rounded-md mb-4">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">RenderFrames Function</h2>
+        <p class="text-gray-600 mb-4">This flowchart illustrates how the memory frames are visualized, showing the current state of memory and highlighting page hits, faults, and replacements.</p>
+      </div>
+      <div class="flowchart-container">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5%20-%20renderFrames%28%29-V0MyuGxRamxgFOfcI2zRVIX015ktVQ.png" alt="RenderFrames Function Flowchart" class="flowchart-img">
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function openTab(evt, tabName) {
+      // Hide all tab content
+      const tabContents = document.getElementsByClassName("tab-content");
+      for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active");
+      }
+      
+      // Remove active class from all tab buttons
+      const tabButtons = document.getElementsByClassName("tab-btn");
+      for (let i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+      }
+      
+      // Show the selected tab content and mark the button as active
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+</body>
+</html>

@@ -2848,6 +2848,7 @@ body {
   gap: 8px;
   margin-bottom: 8px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 20px; /* Space for the pointer */
   scroll-behavior: smooth;
 }

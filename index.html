@@ -383,11 +383,22 @@ document.addEventListener('DOMContentLoaded', function() {
       if (emptyFrameIndex !== -1) {
         frames[emptyFrameIndex] = page;
       } else {
-        const leastRecentlyUsed = lruOrder.pop();
+        // Find the least recently used page that's actually in frames
+        // We need to find a page in lruOrder that's also in frames
+        let leastRecentlyUsed = null;
+        // Start from the end of lruOrder (least recently used)
+        for (let i = lruOrder.length - 1; i >= 0; i--) {
+          if (frames.includes(lruOrder[i])) {
+            leastRecentlyUsed = lruOrder[i];
+            // Remove this page from lruOrder
+            lruOrder.splice(i, 1);
+            break;
+          }
+        }
+        
         const replacementIndex = frames.indexOf(leastRecentlyUsed);
         replacedPage = frames[replacementIndex];
         frames[replacementIndex] = page;
-        lruOrder.unshift(page);
       }
     } else {
       pageHits++;

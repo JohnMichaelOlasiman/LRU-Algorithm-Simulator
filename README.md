@@ -1,4 +1,4 @@
-# LRU Page Replacement Algorithm Simulator
+# 🚀 Least Recently Used (LRU) Page Replacement Algorithm Simulator
 
 🔗 https://lru-simulator.vercel.app
 

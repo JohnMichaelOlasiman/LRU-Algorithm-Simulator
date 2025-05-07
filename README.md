@@ -1,8 +1,8 @@
-LRU Page Replacement Algorithm Simulator
+# LRU Page Replacement Algorithm Simulator
 
 🔗 https://lru-simulator.vercel.app
 
-This is a web-based simulator for the Least Recently Used (LRU) Page Replacement Algorithm, designed to help students and educators visualize how LRU works in memory management.
+**This is a web-based simulator for the Least Recently Used (LRU) Page Replacement Algorithm, designed to help students and educators visualize how LRU works in memory management.**
 
 🚀 Features
   

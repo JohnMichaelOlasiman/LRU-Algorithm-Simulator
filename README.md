@@ -1,33 +1,33 @@
 # 🚀 Least Recently Used (LRU) Page Replacement Algorithm Simulator
 
-🔗 https://lru-simulator.vercel.app
+🔗 **Live Demo:** [lru-simulator.vercel.app](https://lru-simulator.vercel.app)
 
-**This is a web-based simulator for the Least Recently Used (LRU) Page Replacement Algorithm, designed to help students and educators visualize how LRU works in memory management.**
+This is a **web-based simulator** for the **Least Recently Used (LRU) Page Replacement Algorithm**, designed to help students, educators, and learners visualize how LRU works in memory management.
 
-🚀 Features
-  
-  Interactive simulation of LRU algorithm
+---
 
-  Step-by-step visualization of page replacement
+## ✨ Features
 
-  Customizable page reference strings and frame size
+- 🔄 **Interactive simulation** of the LRU algorithm  
+- 🪄 **Step-by-step visualization** of page replacements  
+- ⚙️ **Customizable input**: page reference strings and frame size  
+- 📊 **Real-time statistics**: page hits and faults display  
 
-  Real-time display of hits and faults
+---
 
-🛠️ Tech Stack
-  
-  React.js
-  
-  HTML
-  
-  TailwindCSS
-  
-  Vercel (Deployment)
+## 🛠 Tech Stack
 
-📚 Use Cases
+- ⚛️ **React.js**
+- 🧱 **HTML**
+- 🎨 **TailwindCSS**
+- ☁️ **Vercel** (for deployment)
 
-Educational tool for operating systems classes
+---
 
-Visual aid for understanding paging concepts
+## 📚 Use Cases
 
-Easy testing and experimentation with page strings
+- 📘 **Educational tool** for operating system and computer architecture courses  
+- 🧠 **Visual aid** for understanding memory paging concepts  
+- 🧪 **Quick testing** and experimentation with different reference strings  
+
+---
